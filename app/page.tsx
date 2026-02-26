@@ -306,7 +306,7 @@ export default function Home() {
           {/* FOOTER */}
           <footer className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
             <p className="text-slate-500">
-              © {new Date().getFullYear()} Roland — Informatiker
+              © {new Date().getFullYear()} Roland Hofmann — Informatiker
             </p>
 
             <div className="flex gap-6">
