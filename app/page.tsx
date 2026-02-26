@@ -304,7 +304,37 @@ export default function Home() {
           </motion.section>
 
           {/* FOOTER */}
-          <footer className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
+          <footer className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-6 relative">
+            {/* Tooltips Container */}
+            <div className="fixed bottom-8 right-4 z-50 pointer-events-none">
+              {/* GitHub Tooltip */}
+              <div 
+                id="github-tooltip" 
+                className="invisible absolute bg-slate-900/95 backdrop-blur-xl text-cyan-300 text-sm px-3 py-1.5 rounded-lg border border-cyan-400/30 shadow-2xl whitespace-nowrap opacity-0 transform translate-y-2 transition-all duration-300 pointer-events-none"
+                style={{ bottom: '80px', right: '20px' }}
+              >
+                GitHub besuchen
+              </div>
+              
+              {/* LinkedIn Tooltip */}
+              <div 
+                id="linkedin-tooltip" 
+                className="invisible absolute bg-slate-900/95 backdrop-blur-xl text-cyan-300 text-sm px-3 py-1.5 rounded-lg border border-cyan-400/30 shadow-2xl whitespace-nowrap opacity-0 transform translate-y-2 transition-all duration-300 pointer-events-none"
+                style={{ bottom: '80px', right: '68px' }}
+              >
+                LinkedIn Profile
+              </div>
+              
+              {/* Mail Tooltip */}
+              <div 
+                id="mail-tooltip" 
+                className="invisible absolute bg-slate-900/95 backdrop-blur-xl text-cyan-300 text-sm px-3 py-1.5 rounded-lg border border-cyan-400/30 shadow-2xl whitespace-nowrap opacity-0 transform translate-y-2 transition-all duration-300 pointer-events-none"
+                style={{ bottom: '80px', right: '116px' }}
+              >
+                E-Mail senden
+              </div>
+            </div>
+
             <p className="text-slate-500">
               © {new Date().getFullYear()} Roland Hofmann — Informatiker
             </p>
@@ -319,7 +349,21 @@ export default function Home() {
                 }}
                 whileTap={{ scale: 0.9 }}
                 href="#"
-                className="group p-2 rounded-lg bg-slate-900/50 border border-slate-700/50 hover:bg-cyan-500/20 hover:border-cyan-400/50 backdrop-blur-sm transition-all duration-300"
+                className="group relative p-2 rounded-lg bg-slate-900/50 border border-slate-700/50 hover:bg-cyan-500/20 hover:border-cyan-400/50 backdrop-blur-sm transition-all duration-300"
+                onMouseEnter={() => {
+                  const tooltip = document.getElementById('github-tooltip');
+                  if (tooltip) {
+                    tooltip.classList.remove('invisible', 'opacity-0');
+                    tooltip.classList.add('visible', 'opacity-100', 'translate-y-0');
+                  }
+                }}
+                onMouseLeave={() => {
+                  const tooltip = document.getElementById('github-tooltip');
+                  if (tooltip) {
+                    tooltip.classList.remove('visible', 'opacity-100', 'translate-y-0');
+                    tooltip.classList.add('invisible', 'opacity-0');
+                  }
+                }}
               >
                 <Github size={20} className="group-hover:text-cyan-400 transition-colors duration-300" />
               </motion.a>
@@ -332,7 +376,21 @@ export default function Home() {
                 }}
                 whileTap={{ scale: 0.9 }}
                 href="#"
-                className="group p-2 rounded-lg bg-slate-900/50 border border-slate-700/50 hover:bg-cyan-500/20 hover:border-cyan-400/50 backdrop-blur-sm transition-all duration-300"
+                className="group relative p-2 rounded-lg bg-slate-900/50 border border-slate-700/50 hover:bg-cyan-500/20 hover:border-cyan-400/50 backdrop-blur-sm transition-all duration-300"
+                onMouseEnter={() => {
+                  const tooltip = document.getElementById('linkedin-tooltip');
+                  if (tooltip) {
+                    tooltip.classList.remove('invisible', 'opacity-0');
+                    tooltip.classList.add('visible', 'opacity-100', 'translate-y-0');
+                  }
+                }}
+                onMouseLeave={() => {
+                  const tooltip = document.getElementById('linkedin-tooltip');
+                  if (tooltip) {
+                    tooltip.classList.remove('visible', 'opacity-100', 'translate-y-0');
+                    tooltip.classList.add('invisible', 'opacity-0');
+                  }
+                }}
               >
                 <Linkedin size={20} className="group-hover:text-cyan-400 transition-colors duration-300" />
               </motion.a>
@@ -345,7 +403,21 @@ export default function Home() {
                 }}
                 whileTap={{ scale: 0.9 }}
                 href="mailto:roland@example.com"
-                className="group p-2 rounded-lg bg-slate-900/50 border border-slate-700/50 hover:bg-cyan-500/20 hover:border-cyan-400/50 backdrop-blur-sm transition-all duration-300"
+                className="group relative p-2 rounded-lg bg-slate-900/50 border border-slate-700/50 hover:bg-cyan-500/20 hover:border-cyan-400/50 backdrop-blur-sm transition-all duration-300"
+                onMouseEnter={() => {
+                  const tooltip = document.getElementById('mail-tooltip');
+                  if (tooltip) {
+                    tooltip.classList.remove('invisible', 'opacity-0');
+                    tooltip.classList.add('visible', 'opacity-100', 'translate-y-0');
+                  }
+                }}
+                onMouseLeave={() => {
+                  const tooltip = document.getElementById('mail-tooltip');
+                  if (tooltip) {
+                    tooltip.classList.remove('visible', 'opacity-100', 'translate-y-0');
+                    tooltip.classList.add('invisible', 'opacity-0');
+                  }
+                }}
               >
                 <Mail size={20} className="group-hover:text-cyan-400 transition-colors duration-300" />
               </motion.a>
