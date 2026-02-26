@@ -201,7 +201,7 @@ export default function Home() {
             </motion.div>
           </section>
 
-          {/* TECH STACK */}
+          {/* TECH STACK - GRÖßERES HIGHLIGHTING INNERHALB DER BOX */}
           <motion.section
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -239,10 +239,13 @@ export default function Home() {
                     damping: 17,
                     delay: i * 0.05 
                   }}
-                  className="group rounded-2xl bg-slate-900/60 backdrop-blur-xl p-6 text-center border border-slate-800/70 hover:border-cyan-400/80 hover:shadow-[0_0_40px_rgba(34,211,238,0.35)] transition-all duration-300 cursor-pointer"
+                  className="group rounded-2xl bg-slate-900/60 backdrop-blur-xl p-7 text-center border border-slate-800/70 hover:border-cyan-400/80 hover:shadow-[0_0_50px_rgba(34,211,238,0.4)] transition-all duration-500 cursor-pointer relative overflow-hidden"
                 >
+                  {/* Größerer Hintergrund-Effekt INNERHALB der Box */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/25 via-transparent to-blue-400/25 rounded-2xl transform scale-0 group-hover:scale-110 transition-transform duration-500 opacity-0 group-hover:opacity-100" />
+                  
                   <div className="relative">
-                    <span className="relative z-10 font-medium group-hover:text-cyan-300 transition-colors duration-300">
+                    <span className="relative z-10 font-medium text-lg group-hover:text-cyan-300 transition-colors duration-300">
                       {tech}
                     </span>
                     <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/20 via-transparent to-blue-400/20 rounded-2xl transform scale-0 group-hover:scale-100 transition-transform duration-500 opacity-0 group-hover:opacity-100" />
